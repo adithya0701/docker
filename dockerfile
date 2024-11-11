@@ -4,12 +4,13 @@ FROM python:3.9-slim
 # Step 2: Set the working directory inside the container
 WORKDIR /app
 
-# Step 3: Copy the current directory (where Dockerfile is) contents into the container at /app
+# Step 3: Copy the current directory contents (factorial.py) into the container at /app
 COPY . /app
 
-# Step 4: (Optional) Install any necessary dependencies (if there were any requirements)
-# For this simple script, there are no dependencies to install, so this step is skipped.
+# Step 4: Install dependencies directly (without requirements.txt)
+RUN pip install numpy==1.21.0 requests==2.25.1
 
-# Step 5: Run the Python script when the container starts
+# Step 5: Set the default command to run when the container starts
 CMD ["python", "factorial.py"]
+
 
