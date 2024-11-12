@@ -11,6 +11,6 @@ COPY . /app
 RUN pip install numpy==1.21.0 requests==2.25.1
 
 # Step 5: Set the default command to run when the container starts
-CMD ["python", "factorial.py"]
+CMD ["python", "app.py"]
 
 
